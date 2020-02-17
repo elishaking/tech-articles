@@ -2,6 +2,45 @@ Arrays are indispensable data-structures in javascript and understanding how to 
 
 Arrays are represented by a robust object in JavaScript that provides several useful methods and operations to work with. I'll be going over most of them in this article
 
+# Creating arrays
+
+Arrays can be initialized directly like so
+
+```javascript
+const arr = [1, 4, 8, 2, 2, 4, 5];
+```
+
+or by the `Array` constructor
+
+```javascript
+// create an array of 3 undefined items
+const arr = new Array(3);
+
+// assign the value of 10 to all items
+arr.fill(10); // [10, 10, 10]
+
+// in one line
+const newArr = new Array(3).fill(10); // [10, 10, 10]
+```
+
+JavaScript provides some useful method for creating arrays.
+
+## Array.from
+
+Creates an array from another array
+
+```javascript
+const arr = Array.from([1, 4, 5]); // [1, 4, 5]
+```
+
+## Array.of
+
+Creates an array from every argument it receives
+
+```javascript
+const arr = Array.of(1, 4, 5); // [1, 4, 5]
+```
+
 # Iterating over arrays
 
 There are several methods available for array iteration in JavaScript
