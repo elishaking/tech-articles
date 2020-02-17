@@ -164,11 +164,20 @@ const arr = [1, 2, 3, 4, 5];
 arr.splice(1, 2);
 ```
 
+## slice
+
+This method does not modify the array. It creates a subset of the array from a given `startIndex` to `endIndex - 1`.
+
 ```javascript
 const arr = [1, 2, 3, 4, 5];
 
-// remove all items starting from index 2
-arr.splice(2, arr.length);
+// remove item at index 1
+arr.slice(1, 1); // []
+arr.slice(1, 3); // [2, 3]
+
+// without endIndex
+arr.slice(2); // [ 3, 4, 5 ]
+arr.slice(1); // [ 2, 3, 4, 5 ]
 ```
 
 ## reverse
@@ -276,6 +285,21 @@ const arr = [1, 4, 8, 2, 2, 4, 5];
 arr.some(item => item > 2); // true
 arr.some(item => item % 8 === 0); // true
 arr.some(item => item < 0); // false
+```
+
+```javascript
+const arr = [1, 4, 8, 2, 2, 4, 5];
+```
+
+## every
+
+Checks if all items in the array satisfies a given condition
+
+```javascript
+const arr = [1, 4, 8, 2, 2, 4, 5];
+arr.every(item => item > 0); // true
+arr.every(item => item % 1 === 0); // true
+arr.every(item => item < 0); // false
 ```
 
 ```javascript
