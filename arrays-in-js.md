@@ -51,6 +51,16 @@ const arr = [1, 2, 3, 4, 5];
 const sum = arr.reduce((total, item) => total + item, 0); // 8
 ```
 
+## reduceRight
+
+Identical to reduce but works from right to left
+
+```javascript
+const arr = [1, 2, 3, 4, 5];
+
+const sum = arr.reduceRight((total, item) => total + item, 0); // 8
+```
+
 # Modifying arrays
 
 JavaScript provides several useful methods and operations for modifying arrays
@@ -202,9 +212,9 @@ This method returns the first item in the array that satisfies a given condition
 
 ```javascript
 const arr = [1, 4, 8, 2, 2, 4, 5];
-arr.find(n => n % 2 === 0); // 4
-arr.find(n => n / 2 === 4); // 8
-arr.find(n => (n * n) / 2 === 2); // 2
+arr.find(item => item % 2 === 0); // 4
+arr.find(item => item / 2 === 4); // 8
+arr.find(item => (item * item) / 2 === 2); // 2
 ```
 
 ## findIndex
@@ -213,9 +223,9 @@ Similar to `find` except that it returns the index
 
 ```javascript
 const arr = [1, 4, 8, 2, 2, 4, 5];
-arr.findIndex(n => n % 2 === 0); // 1
-arr.findIndex(n => n / 2 === 4); // 2
-arr.findIndex(n => (n * n) / 2 === 2); // 3
+arr.findIndex(item => item % 2 === 0); // 1
+arr.findIndex(item => item / 2 === 4); // 2
+arr.findIndex(item => (item * item) / 2 === 2); // 3
 ```
 
 ## some
@@ -224,9 +234,9 @@ Checks if one or more items in the array satisfies a given condition
 
 ```javascript
 const arr = [1, 4, 8, 2, 2, 4, 5];
-arr.some(n => n > 2); // true
-arr.some(n => n % 8 === 0); // true
-arr.some(n => n < 0); // false
+arr.some(item => item > 2); // true
+arr.some(item => item % 8 === 0); // true
+arr.some(item => item < 0); // false
 ```
 
 ```javascript
