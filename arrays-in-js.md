@@ -168,3 +168,67 @@ const arr2 = [100, 200, 300];
 
 const newArr = [...arr2, ...arr, 10, 9, ...arr, -10]; // [ 100, 200, 300, 1, 2, 3, 4, 5, 10, 9, 1, 2, 3, 4, 5, -10 ]
 ```
+
+# Searching arrays
+
+There are several convenience method for find items in arrays or verifying a condition
+
+## indexOf
+
+Finds the index of the **first occurence** of a given item within an array
+
+```javascript
+const arr = [1, 2, 3, 2, 2, 4, 5];
+arr.indexOf(2); // 1
+arr.indexOf(5); // 4
+arr.indexOf(100); // -1
+arr.indexOf(10); // -1
+```
+
+## includes
+
+Checks if the array contains the specified item
+
+```javascript
+const arr = [1, 2, 3, 2, 2, 4, 5];
+
+arr.includes(10); // false
+arr.includes(2); // true
+```
+
+## find
+
+This method returns the first item in the array that satisfies a given condition
+
+```javascript
+const arr = [1, 4, 8, 2, 2, 4, 5];
+arr.find(n => n % 2 === 0); // 4
+arr.find(n => n / 2 === 4); // 8
+arr.find(n => (n * n) / 2 === 2); // 2
+```
+
+## findIndex
+
+Similar to `find` except that it returns the index
+
+```javascript
+const arr = [1, 4, 8, 2, 2, 4, 5];
+arr.findIndex(n => n % 2 === 0); // 1
+arr.findIndex(n => n / 2 === 4); // 2
+arr.findIndex(n => (n * n) / 2 === 2); // 3
+```
+
+## some
+
+Checks if one or more items in the array satisfies a given condition
+
+```javascript
+const arr = [1, 4, 8, 2, 2, 4, 5];
+arr.some(n => n > 2); // true
+arr.some(n => n % 8 === 0); // true
+arr.some(n => n < 0); // false
+```
+
+```javascript
+const arr = [1, 4, 8, 2, 2, 4, 5];
+```
