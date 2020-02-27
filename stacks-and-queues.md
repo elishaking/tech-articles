@@ -26,7 +26,23 @@ class Stack {
   }
 }
 
-const x = new Stack([1, 2, 3]) // stack: [1, 2, 3]
-x.pop() // stack: [1, 2]
-x.push(100) // stack: [1, 2, 100]
+const x = new Stack([1, 2, 3]); // stack: [1, 2, 3]
+x.pop(); // stack: [1, 2]
+x.push(100); // stack: [1, 2, 100]
 ```
+
+There are many good use cases for the stack datastructure. A simple example is reversing a string
+
+```javascript
+const firstName = "King";
+const nameStack = new Stack(firstName.split(""));
+let reversedName = "";
+
+for (let i = 0; i < firstName.length; i++) {
+  reversedName += nameStack.pop();
+}
+console.log(reversedName); // gniK
+```
+
+JavaScript also uses something called a **call stack**  while executing scripts
+
