@@ -1,7 +1,7 @@
-Stacks and Queues are some basic data structures that have great utility while building your apps
+Stacks and Queues are two basic data structures that have many practical applications in software development
 
 # What is a Stack
-A **stack** is a collection of items that supports only two operations: the **push** operation and the **pop** operation. A stack is a LIFO (Last In First Out) data structure which means that the last item pushed into a stack will be the first item popped from the stack.
+A **stack** is a collection of items that supports only two operations: the **push** operation and the **pop** operation. A stack is a LIFO (Last In First Out) data structure which means that the last item pushed into a stack must be the first item popped from the stack.
 
 Usually, the **push** and **pop** operations of a typical stack data structure are constant time operations denoted by **O(1)** irrespective of the size of the stack.
 
@@ -48,6 +48,10 @@ console.log(reversedName); // gniK
 
 JavaScript also uses something called a **call stack**  while executing scripts
 
+## More Applications of the Stack data structure
+- Browser navigation
+- Parsing and Processing Mathematical expressions
+
 # What is a Queue
 A **queue** is a collection of items that supports only two operations: the **add or enqueue** operation and the **remove or dequeue** operation. Unlike a stack, a queue is a FIFO (First In First Out) data structure which means that the first item added to a queue must be the first item removed from the queue.
 
@@ -55,7 +59,7 @@ Similar to the stack, the **add** and **remove** operations of a queue are const
 
 There also no **Queue** object available in JavaScript out of the box but a stack can easily by represented by an **Array** object that only allows **enqueue** and **dequeue** operations
 
-As mentioned earlier, the **push** operation on a JavaScript Array is a constant time operation which makes it idle for implementing the **enqueue** operation for the queue. The **shift** operation on a JavaScript Array can be used to implement **dequeue**, however, the **shift** operation has a linear time complexity [**O(n)**] and can get slow if the queue grows big enough. A clever work-around is shown below
+As mentioned earlier, the **push** operation on a JavaScript Array is a constant time operation which makes it ideal for implementing the **enqueue** operation for the queue. The **shift** operation on a JavaScript Array can be used to implement **dequeue**, however, the **shift** operation has a linear time complexity [**O(n)**] and can get slow if the queue grows big enough. A clever work-around is shown below
 
 ```javascript
 class Queue {
@@ -88,7 +92,7 @@ x.enqueue(1000); // queue: [2, 3, 10, 1000]
 
 In the above **Queue** class, the **dequeue** implementation has a constant time complexity which meets the queue data structure requirement
 
-The queue is widely applied in tackling several programming problems. A simple example demonstrates queues in action is checking if a string is a palindrome
+The queue is widely applied in tackling several programming problems. A simple example for queues is checking for a palindrome
 
 ```javascript
 function palindrome(word) {
@@ -105,3 +109,9 @@ palindrome("deed") // true
 palindrome("King") // false
 palindrome("level") // true
 ```
+
+## More Applications of the Queue data structure
+- Storing a number of computer processes to be executed in order
+- SMS messaging
+
+Thanks 👍 for making it to the end 👨‍💻 and I really hope you found the content useful.
