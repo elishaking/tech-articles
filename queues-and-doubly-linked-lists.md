@@ -25,7 +25,7 @@ class ListNode {
 
 class DoublyLinkedList {
   constructor() {
-    this.length = 0;
+    this.size = 0;
     this.head = null;
     this.tail = null;
   }
@@ -39,7 +39,7 @@ class DoublyLinkedList {
   push(data) {
     const newNode = new ListNode(data);
 
-    if (this.length === 0) {
+    if (this.size === 0) {
       this.head = newNode;
       this.tail = newNode;
     } else {
@@ -50,7 +50,7 @@ class DoublyLinkedList {
       this.tail = newNode;
     }
 
-    this.length++;
+    this.size++;
 
     return newNode;
   }
@@ -61,13 +61,13 @@ class DoublyLinkedList {
    * Time complexity: O(1)
    */
   shift() {
-    if (this.length === 0) {
+    if (this.size === 0) {
       return null;
     }
 
     const nodeToRemove = this.head;
 
-    if (this.length === 1) {
+    if (this.size === 1) {
       this.head = null;
       this.tail = null;
     } else {
@@ -77,9 +77,24 @@ class DoublyLinkedList {
       nodeToRemove.next = null;
     }
 
-    this.length--;
+    this.size--;
 
     return nodeToRemove;
+  }
+
+  /**
+   * Return list items
+   */
+  toString() {
+    const list = [];
+    let currentNode = this.head;
+
+    while (currentNode !== null) {
+      list.push(JSON.stringify(currentNode.data));
+      currentNode = currentNode.next;
+    }
+
+    return list.toString();
   }
 }
 ```
