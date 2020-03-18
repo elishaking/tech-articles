@@ -108,4 +108,45 @@ A **queue** is a collection of items that supports only two operations: the **ad
 A typical implementation for a queue will involve the storage of the queue items in an **array**. This is not a great solution because the dequeue operation requires the removal of the first element in the **array** which is linear time operation. In this case, a doubly linked list is a great alternative for storing the queue items and enabling both enqueue and dequeue to be performed in constant time.
 
 ```javascript
+class Queue {
+  constructor() {
+    this._items = new DoublyLinkedList();
+  }
+
+  /**
+   * Add an item to the queue
+   *
+   * Time complexity: O(1)
+   * @param {any} newItem
+   */
+  enqueue(newItem) {
+    return this._items.push(newItem);
+  }
+
+  /**
+   * Remove an item from the queue
+   *
+   * Time complexity: O(1)
+   */
+  dequeue() {
+    return this._items.shift();
+  }
+
+  /**
+   * Return number of items in the queue
+   */
+  size() {
+    return this._items.size;
+  }
+
+  /**
+   * Return Queue items
+   */
+  toString() {
+    return `Queue {
+      size: ${this.size()}
+      _items: [${this._items.toString()}]
+    }`;
+  }
+}
 ```
