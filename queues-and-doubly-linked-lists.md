@@ -1,18 +1,20 @@
 # What is a Linked List
 
-A **linked list** is a data structure that stores a collection of nodes. Each node in the linked list contains data and two **pointers**. In simple terms, a pointer is a variable that contains the address of some object in memory.
+A **linked list** is a data structure that stores a collection of nodes. Each node in a **doubly linked list** contains data and two **pointers**. In simple terms, a pointer is a variable that contains the address of some other object in memory.
 
 ![Doubly Linked List](https://github.com/elishaking/tech-articles/blob/master/doubly%20linked%20lists.png?raw=true)
 
-In a **doubly linked list**, each node contains two pointers. This first pointer holds the memory address of the previous node while the second pointer holds the memory address of the next node in the list.
+This first pointer in the **doubly linked list** holds the memory address of the previous node while the second pointer holds the memory address of the next node in the list.
 
 ### Time Complexity (Big O)
 
-One great benefit of doubly linked list is the fact that it enables the insertion of new nodes to beginning and end of the list in constant time - **O(1)**.
+One great benefit of a **doubly linked list** is the fact that it enables the insertion of new nodes to the beginning and end of the list in constant time - **O(1)**.
 
-In contrast, a typical array will produce a linear time complexity - **O(n)** - when inserting to the beginning because the addresses of all the succeeding elements in the array needs to be shifted by 1. This can quickly become inefficient as the array grows in size.
+In contrast, a typical array will produce a linear time complexity - **O(n)** - when inserting to the beginning because the addresses of all the succeeding items in the array must be shifted by 1. This can quickly become inefficient as the array grows in size. Also, a regular **linked list** produces linear time complexity - **O(n)** - when inserting an item to the end of the list.
 
-This unique contant time complexity makes doubly linked lists a good candidate for the implementation of **Queues**.
+This dual contant time property makes **doubly linked lists** a good candidate for the implementation of **Queues**.
+
+### Doubly Linked List Implementation
 
 ```javascript
 class ListNode {
@@ -107,7 +109,9 @@ A **queue** is a collection of items that supports only two operations: the **ad
 
 A typical implementation for a queue will involve the storage of the queue items in an **array**. This is not a great solution because the dequeue operation requires the removal of the first element in the **array** which is a linear time - **O(n)** - operation.
 
-Consequently, a doubly linked list is a great alternative for storing queue items and enabling both enqueue and dequeue to be performed in constant time - **O(1)**.
+Consequently, a doubly linked list is a great alternative for storing queue items because it enables both the **enqueue** and **dequeue** operations to be performed in constant time - **O(1)**.
+
+### Queue Implementation
 
 ```javascript
 class Queue {
@@ -154,6 +158,8 @@ class Queue {
 ```
 
 In the above **Queue** class, the **dequeue** and **enqueue** methods both have constant time complexity. This meets the requirement for a good queue implementation.
+
+### Queue Test
 
 ```javascript
 const queue = new Queue();
