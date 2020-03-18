@@ -8,9 +8,9 @@ In a **doubly linked list**, each node contains two pointers. This first pointer
 
 ### Time Complexity (Big O)
 
-One great benefit of doubly linked list is the fact that it enables the insertion of new nodes to beginning and end of the list in constant time - O(1).
+One great benefit of doubly linked list is the fact that it enables the insertion of new nodes to beginning and end of the list in constant time - **O(1)**.
 
-In contrast, a typical array will produce a linear time complexity - O(n) - when inserting to the beginning because the addresses of all the succeeding elements in the array needs to be shifted by 1. This can quickly become inefficient as the array grows in size.
+In contrast, a typical array will produce a linear time complexity - **O(n)** - when inserting to the beginning because the addresses of all the succeeding elements in the array needs to be shifted by 1. This can quickly become inefficient as the array grows in size.
 
 This unique contant time complexity makes doubly linked lists a good candidate for the implementation of **Queues**.
 
@@ -105,7 +105,9 @@ There are more methods that can be added to the `DoublyLinkedList` class but we 
 
 A **queue** is a collection of items that supports only two operations: the **add or enqueue** operation and the **remove or dequeue** operation.
 
-A typical implementation for a queue will involve the storage of the queue items in an **array**. This is not a great solution because the dequeue operation requires the removal of the first element in the **array** which is linear time operation. In this case, a doubly linked list is a great alternative for storing the queue items and enabling both enqueue and dequeue to be performed in constant time.
+A typical implementation for a queue will involve the storage of the queue items in an **array**. This is not a great solution because the dequeue operation requires the removal of the first element in the **array** which is a linear time - **O(n)** - operation.
+
+Consequently, a doubly linked list is a great alternative for storing queue items and enabling both enqueue and dequeue to be performed in constant time - **O(1)**.
 
 ```javascript
 class Queue {
@@ -145,8 +147,45 @@ class Queue {
   toString() {
     return `Queue {
       size: ${this.size()}
-      _items: [${this._items.toString()}]
+      items: [${this._items.toString()}]
     }`;
   }
 }
 ```
+
+In the above **Queue** class, the **dequeue** and **enqueue** methods both have constant time complexity. This meets the requirement for a good queue implementation.
+
+```javascript
+const queue = new Queue();
+console.log(queue.toString());
+/*
+  Queue {
+    size: 0
+    _items: []
+  }
+*/
+
+queue.enqueue(10);
+queue.enqueue(-19);
+queue.enqueue(1000);
+console.log(queue.toString());
+/*
+  Queue {
+    size: 3
+    _items: [10,-19,1000]
+  }
+*/
+
+queue.dequeue();
+console.log(queue.toString());
+/*
+  Queue {
+    size: 2
+    _items: [-19,1000]
+  }
+*/
+```
+
+Find out more about the applications of queues in this article: {% link https://dev.to/elishaking/stacks-and-queues-9o6 %}
+
+Thanks 👍 for making it to the end 👨‍💻 and I really hope you found the content useful.
