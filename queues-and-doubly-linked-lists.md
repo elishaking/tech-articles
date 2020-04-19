@@ -195,3 +195,5 @@ console.log(queue.toString());
 Find out more about the applications of queues in this article: {% link https://dev.to/elishaking/stacks-and-queues-9o6 %}
 
 Thanks 👍 for making it to the end 👨‍💻 and I really hope you found the content useful.
+
+Leave a comment below or tweet me @ElishaChibueze if you have any questions or suggestions
