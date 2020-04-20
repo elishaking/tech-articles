@@ -151,3 +151,70 @@ The merge sort uses a recursive approach to achieve an impressive linearithmic t
 It is clear from the **base case** of the recursive `mergeSort` function that the input array of length N is split into N separate parts. These parts are then merged together in the merge function.
 
 ### Quick Sort
+
+This is very similar to the merge sort but has a more complex implementation. Unlike the merge sort, splitting is done using something called a **pivot** which is chosen randomly.
+
+It has the same time complexity as the merge sort: O(Nlog(N)). In worst case scenarios, it can have a time complexity of O(N^2)
+
+However, it can perform better than the merge sort under some conditions:
+
+- Smaller datasets (typically)
+- When a good pivot is selected
+
+```javascript
+function quickSort(arr) {
+  const N = arr.length;
+
+  sortQ(arr, 0, Math.floor(N / 2));
+}
+
+function sortQ(arr, left, right) {
+  let pivotIdx;
+  let partitionIdx;
+
+  if (left < right) {
+    pivotIdx = right;
+    partitionIdx = partition(arr, pivotIdx, left, right);
+
+    sortQ(arr, left, partitionIdx - 1);
+    sortQ(arr, partitionIdx + 1, right);
+  }
+  return arr;
+}
+
+function partition(arr, pivotIdx, left, right) {
+  let pivotValue = arr[pivotIdx];
+  let partitionIdx = left;
+
+  for (let i = left; i < right; i++) {
+    if (arr[i] < pivotValue) {
+      [arr[i], arr[partitionIdx]] = [arr[partitionIdx], arr[i]];
+      partitionIdx++;
+    }
+  }
+
+  [arr[right], arr[partitionIdx]] = [arr[partitionIdx], arr[right]];
+  return partitionIdx;
+}
+```
+
+**Time Complexity**: <br>
+
+- Good Pivot: O(Nlog(N)) <br>
+- Bad Pivot: O(N^2)
+
+**Space Complexity**: O(log(N))
+
+The space complexity for quick sort is much better than that of the merge sort, so if memory is a constraint, quick sort is the better option
+
+<!-- Like the merge sort, it takes a divide and conquer approach to split the array using a **pivot element** that is first chosen at random. -->
+
+---
+
+There are more sorting algorithms to explore but the five discussed so far are used widely. Also, the other algorithms usually have some constraints on the type of data they can sort.
+
+You may never encounter a situation where you need to implement a sorting algorithm from scratch but it's absolutely crucial to know when to use either of the available ones to solve a problem.
+
+Thanks 👍 for making it to the end 👨‍💻 and I really hope you found the content useful.
+
+Leave a comment below or tweet me @ElishaChibueze if you have any questions or suggestions
