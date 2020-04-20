@@ -111,3 +111,43 @@ However, the sorting algorithms discussed below perform much better with a time 
 This is one of the most efficient sorting algorithms available and will perform better than others in most cases.
 
 It also preserves the original order for identical items which makes it [stable](https://stackoverflow.com/questions/1517793/what-is-stability-in-sorting-algorithms-and-why-is-it-important).
+
+```javascript
+function mergeSort(arr) {
+  const N = arr.length;
+  if (N === 1) return arr;
+
+  const midIdx = Math.floor(N / 2);
+  const left = arr.slice(0, midIdx);
+  const right = arr.slice(midIdx);
+
+  return merge(mergeSort(left), mergeSort(right));
+}
+
+function merge(left, right) {
+  const merged = [];
+  let leftIdx = 0;
+  let rightIdx = 0;
+
+  while (leftIdx < left.length && rightIdx < right.length) {
+    if (left[leftIdx] < right[rightIdx]) {
+      merged.push(left[leftIdx]);
+      leftIdx++;
+    } else {
+      merged.push(right[rightIdx]);
+      rightIdx++;
+    }
+  }
+
+  return [...merged, ...left.slice(leftIdx), ...right.slice(rightIdx)];
+}
+```
+
+**Time Complexity**: O(Nlog(N)) <br>
+**Space Complexity**: O(N)
+
+The merge sort uses a recursive approach to achieve an impressive linearithmic time complexity.
+
+It is clear from the **base case** of the recursive `mergeSort` function that the input array of length N is split into N separate parts. These parts are then merged together in the merge function.
+
+### Quick Sort
