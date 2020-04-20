@@ -93,3 +93,15 @@ function insertionSort(arr) {
 - Random Data: O(N^2)
 
 **Space Complexity**: O(1)
+
+---
+
+The three sorting algorithms mentioned above are called **elementary sorts** with a poor average time complexity of O(N^2).
+
+However, the sorting algorithms discussed below perform much better with a time complexity of O(NLog(N)). They take a divide and conquer approach.
+
+### Merge Sort
+
+This is one of the most efficient sorting algorithms available and will perform better than others in most cases.
+
+It also preserves the original order for identical items which makes it [stable](https://stackoverflow.com/questions/1517793/what-is-stability-in-sorting-algorithms-and-why-is-it-important).
