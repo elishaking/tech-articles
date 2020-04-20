@@ -18,8 +18,10 @@ This may not be the most performant choice but it's implementation is simple and
 
 ```javascript
 function bubbleSort(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = 1; j < arr.length - i; j++) {
+  const N = arr.length;
+
+  for (let i = 0; i < N; i++) {
+    for (let j = 1; j < N - i; j++) {
       if (arr[j] < arr[j - 1]) [arr[j], arr[j - 1]] = [arr[j - 1], arr[j]];
     }
   }
@@ -43,9 +45,11 @@ In most cases, the selection sort is usually the slowest of the sorting algorith
 
 ```javascript
 function selectionSort(arr) {
-  for (let i = 0; i < arr.length; i++) {
+  const N = arr.length;
+
+  for (let i = 0; i < N; i++) {
     let minIdx = i;
-    for (let j = i + 1; j < arr.length; j++) {
+    for (let j = i + 1; j < N; j++) {
       if (arr[j] < arr[minIdx]) {
         minIdx = j;
       }
@@ -70,7 +74,9 @@ This one is a bit more complex than the first two. It can be the fastest of all 
 
 ```javascript
 function insertionSort(arr) {
-  for (let i = 1; i < arr.length; i++) {
+  const N = arr.length;
+
+  for (let i = 1; i < N; i++) {
     if (arr[i] < arr[0]) {
       const val = arr.splice(i, 1)[0];
       arr.unshift(val);
