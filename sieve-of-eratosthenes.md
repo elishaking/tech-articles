@@ -1,9 +1,13 @@
 # Sieve of Eratosthenes
 
-The Sieve of Eratosthenes is a simple algorithm for finding all the prime numbers of [2, n]. It works by removing multiples of consecutive numbers.
+The Sieve of Eratosthenes is a simple and fast algorithm for finding all the prime numbers in the range [2, n]. It works by removing multiples of consecutive numbers.
+
+Other algorithms used to accomplish this are less efficient and will typically produce time complexities of **O(N^2)** or **O(N^(3/2))**.
+
+Below is a JavaScript implementation of the Sieve of Eratosthenes:
 
 ```javascript
-const sieveOfEratosthenes = n => {
+const sieveOfEratosthenes = (n) => {
   // initially label every number from [0, n] as a prime number
   const primeNumbersSieve = new Array(n + 1).fill(true);
 
@@ -35,4 +39,4 @@ const sieveOfEratosthenes = n => {
 };
 ```
 
-The time complexity of the sieve is **O(nlog(log(n)))**
+The time complexity of the sieve is **O(nlog(log(n)))**. It is currently the most efficient algorithm for finding all prime numbers in the range [2, n].
