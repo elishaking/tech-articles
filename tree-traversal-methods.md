@@ -1,9 +1,7 @@
-# Recursive Tree traversal methods
-
 There are three ways to traverse or visit all the nodes in a tree. They are:
 
 ## In-order Traversal
-This form of traversal works by visiting the left branch of the tree, then the current node and then the right branch.
+This form of traversal works by visiting the left branch of the tree, then the current node, and then the right branch.
 
 Below is an implementation of in-order traversal:
 
@@ -22,6 +20,8 @@ function inOrder(treeNode) {
 }
 ```
 
+![Tree](https://raw.githubusercontent.com/elishaking/tech-articles/master/tree.png)
+
 If we had a simple tree like the one above, with in-order traversal, the node values will be printed in this order:
 
 ```javascript
@@ -29,7 +29,7 @@ If we had a simple tree like the one above, with in-order traversal, the node va
 ```
 
 ## Pre-order Traversal
-This form of traversal works by first visiting the current node, then left branch and finally, the right branch.
+This form of traversal works by first visiting the current node, then the left branch, and finally, the right branch.
 
 Below is an implementation of pre-order traversal:
 
@@ -47,6 +47,8 @@ function preOrder(treeNode) {
   }
 }
 ```
+
+![Tree](https://raw.githubusercontent.com/elishaking/tech-articles/master/tree.png)
 
 If we had a simple tree like the one above, with pre-order traversal, the node values will be printed in this order:
 
@@ -74,9 +76,16 @@ function postOrder(treeNode) {
 }
 ```
 
+![Tree](https://raw.githubusercontent.com/elishaking/tech-articles/master/tree.png)
+
 If we had a simple tree like the one above, with post-order traversal, the node values will be printed in this order:
 
 ```javascript
 [40, 50, 20, 60, 70, 30, 10]
 ```
 
+___
+
+Thanks 👍 for making it to the end 👨‍💻 and I really hope you found the content useful.
+
+Leave a comment below or tweet me @ElishaChibueze if you have any questions or suggestions
