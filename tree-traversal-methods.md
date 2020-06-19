@@ -83,6 +83,7 @@ If we had a simple tree like the one above, with post-order traversal, the node 
 ```javascript
 [40, 50, 20, 60, 70, 30, 10]
 ```
+In the example above, the values of the left and right sub-trees are printed before the root node 
 
 ___
 
